@@ -8,7 +8,7 @@ class InboxPage {
   }
 
   async navigate() {
-    await this.page.goto("http://localhost:3000");
+    await this.page.goto("/inbox");
   }
 
   async addTask(newTask) {
