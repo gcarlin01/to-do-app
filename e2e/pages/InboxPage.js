@@ -1,3 +1,5 @@
+import { expect } from "@playwright/test";
+
 class InboxPage {
   constructor(page) {
     this.page = page;
@@ -8,7 +10,8 @@ class InboxPage {
   }
 
   async navigate() {
-    await this.page.goto("http://localhost:3000");
+    await this.page.goto("");
+    await expect(this.page).toHaveURL(/inbox/);
   }
 
   async addTask(newTask) {
