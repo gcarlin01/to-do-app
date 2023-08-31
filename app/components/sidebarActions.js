@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import sidebarActionsStyles from './sidebarActions.module.css'
-import footerButtonStyles from './footerbutton.module.css'
+import footerButtonStyles from './footerButton.module.css'
 
 export default function SidebarActions() {
   return (

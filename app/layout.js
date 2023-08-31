@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className={styles.container}>
           <Sidebar />
-          {children}
+          <MainContainer>{children}</MainContainer>
           <SidebarActions />
           <MainActions />
         </div>
