@@ -1,0 +1,8 @@
+.sidebarActions{
+    background: #f9fafa;
+    border-right: 1.8px inset #e4e6e8;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding : 7px;
+}
