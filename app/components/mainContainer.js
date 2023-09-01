@@ -3,5 +3,5 @@ import Link from 'next/link'
 import styles from './mainContainer.module.css'
 
 export default function MainContainer({ children }) {
-  return <div className={styles.mainContainer}>{children}</div>
+  return <main className={styles.mainContainer}>{children}</main>
 }
