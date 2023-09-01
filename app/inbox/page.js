@@ -1,18 +1,20 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { useState } from "react";
-import { v4 as uuid } from "uuid";
+import Image from 'next/image'
+import { useState } from 'react'
+import { v4 as uuid } from 'uuid'
+import { FaBeer } from 'react-icons/fa'
+import { IoFileTray } from 'react-icons/io5'
 
 const TODO_STATUS = {
-  IN_PROGRESS: "IN_PROGRESS",
-  DONE: "DONE",
-};
+  IN_PROGRESS: 'IN_PROGRESS',
+  DONE: 'DONE',
+}
 
 export default function InboxPage() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([])
 
-  const [inputTodoText, setInputTodoText] = useState("");
+  const [inputTodoText, setInputTodoText] = useState('')
 
   const addNewTodo = () => {
     if (inputTodoText) {
@@ -20,12 +22,12 @@ export default function InboxPage() {
         id: uuid(),
         text: inputTodoText,
         status: TODO_STATUS.IN_PROGRESS,
-      };
+      }
 
-      setTodos((todoList) => [newTodo, ...todos]);
-      setInputTodoText("");
+      setTodos((todoList) => [newTodo, ...todos])
+      setInputTodoText('')
     }
-  };
+  }
 
   return (
     <main>
@@ -35,6 +37,8 @@ export default function InboxPage() {
         placeholder="enter a task"
       />
       <button onClick={addNewTodo}>Add</button>
+      <FaBeer size="20px" color="blue" />
+      <IoFileTray size="20px" color="#279be6" />
       <hr />
       <p>Tasks In Progress</p>
       <ul>
@@ -48,18 +52,18 @@ export default function InboxPage() {
                   onClick={() => {
                     const updatedTodos = todos.map((t) => {
                       if (t.id === todo.id) {
-                        return { ...todo, status: TODO_STATUS.DONE };
+                        return { ...todo, status: TODO_STATUS.DONE }
                       }
-                      return t;
-                    });
+                      return t
+                    })
 
-                    setTodos(updatedTodos);
+                    setTodos(updatedTodos)
                   }}
                 >
                   done
                 </button>
               </li>
-            );
+            )
           })}
       </ul>
 
@@ -68,9 +72,9 @@ export default function InboxPage() {
         {todos
           .filter((t) => t.status === TODO_STATUS.DONE)
           .map((todo) => {
-            return <li key={todo.id}>{todo.text}</li>;
+            return <li key={todo.id}>{todo.text}</li>
           })}
       </ul>
     </main>
-  );
+  )
 }
